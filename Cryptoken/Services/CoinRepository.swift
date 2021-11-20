@@ -10,15 +10,15 @@ import Foundation
 class CoinRepository {
     
     
-    func getAllCoins(completionHandler: @escaping ([Coin])->Void) {
+    func getAllCoins(completionHandler: @escaping (RequestModel)->Void) {
         
-        guard let url = URL(string: "https://api.coinranking.com/v2/coins") else { return }
+        guard let url = URL(string: Environment.baseUrl().absoluteString) else { return }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             
             if let coindData = data {
                 do {
-                    let decodedData = try JSONDecoder().decode([Coin].self, from: coindData)
+                    let decodedData = try JSONDecoder().decode(RequestModel.self, from: coindData)
                     completionHandler(decodedData)
                 } catch {
                     print(error.localizedDescription)

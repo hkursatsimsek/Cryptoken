@@ -8,24 +8,24 @@
 import Foundation
 
 struct RequestModel: Codable {
-    var status : String = ""
-    var data : DataModel
+    var status : String?
+    var data : DataModel?
 }
 
 struct DataModel:Codable {
-    var stats : Stats
-    var coins : [Coin]
+    var stats : Stats?
+    var coins : [Coin]?
 }
 
 struct Stats: Codable {
-    var total = 12616
-    var totalCoins = 12616
+    var total : Int?
+    var totalCoins : Int?
 }
 
 struct Coin:Codable {
-    var uuid : String = ""
-    var symbol : String = ""
-    var name : String = ""
-    var color : String = ""
-    var iconUrl : String = ""
+    var uuid : String?
+    var symbol : String?
+    var name : String?
+    var color : String?
+    var iconUrl : String?
 }

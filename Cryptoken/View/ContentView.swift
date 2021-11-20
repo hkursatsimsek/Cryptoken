@@ -13,14 +13,21 @@ struct ContentView: View {
     @State var coins = [Coin]()
     
     var body: some View {
-        List(coins, id:\.uuid) { coin in
-            Text(coin.name)
-        }.navigationTitle("Coins")
-            .onAppear() {
-                coinRepository.getAllCoins { result in
-                    coins = result
+        VStack{
+            List(coins,id: \.uuid) { item in
+                Text(item.name ?? "Noname")
+            }.navigationTitle("Coins")
+                .onAppear(){
+                    coinRepository.getAllCoins { result in
+                        if let coinData = result.data {
+                            if let myCoins = coinData.coins {
+                                coins = myCoins
+                            }
+                        }
+                        
+                    }
                 }
-            }
+        }
     }
 }
 
