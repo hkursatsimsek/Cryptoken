@@ -57,6 +57,7 @@
 		7C9399ED274786BD000372E2 /* Cryptoken */ = {
 			isa = PBXGroup;
 			children = (
+				7C939A0727496A80000372E2 /* Config */,
 				7C939A0327478905000372E2 /* View */,
 				7C9399FF27478790000372E2 /* Services */,
 				7C9399FC274786D4000372E2 /* Model */,
@@ -78,7 +79,6 @@
 		7C9399FC274786D4000372E2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7C939A0527493535000372E2 /* Environment.swift */,
 				7C9399FD274786F7000372E2 /* Coin.swift */,
 			);
 			path = Model;
@@ -98,6 +98,14 @@
 				7C9399F0274786BD000372E2 /* ContentView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		7C939A0727496A80000372E2 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				7C939A0527493535000372E2 /* Environment.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
