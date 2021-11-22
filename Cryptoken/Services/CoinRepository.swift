@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import URLImage
+import SwiftUI
 
 class CoinRepository {
     
@@ -26,8 +28,21 @@ class CoinRepository {
             }
             
         }.resume()
-        
-        
+    }
+    
+    // TODO:
+    func getImage(model: Coin, handler: @escaping (Image)->Image) {
+        if let iconUrlString = model.iconUrl {
+            if let imageUrl = URL(string: iconUrlString) {
+                URLImage(imageUrl) { image in
+                    handler(image
+                                .resizable()
+                                .frame(width: 30, height: 30, alignment: .center)
+                                .aspectRatio(contentMode: .fill) as! Image)
+                    
+                }
+            }
+        }
     }
     
     

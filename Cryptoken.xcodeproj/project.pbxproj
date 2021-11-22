@@ -14,6 +14,10 @@
 		7C9399FE274786F7000372E2 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9399FD274786F7000372E2 /* Coin.swift */; };
 		7C939A02274787CE000372E2 /* CoinRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C939A01274787CE000372E2 /* CoinRepository.swift */; };
 		7C939A0627493535000372E2 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C939A0527493535000372E2 /* Environment.swift */; };
+		7CE303A4274C289C00F46867 /* CoinDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE303A3274C289C00F46867 /* CoinDetailView.swift */; };
+		7CE303A6274C317200F46867 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE303A5274C317200F46867 /* MainView.swift */; };
+		7CE303A9274C494500F46867 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7CE303A8274C494500F46867 /* URLImage */; };
+		7CE303AB274C494500F46867 /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = 7CE303AA274C494500F46867 /* URLImageStore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,8 @@
 		7C9399FD274786F7000372E2 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		7C939A01274787CE000372E2 /* CoinRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRepository.swift; sourceTree = "<group>"; };
 		7C939A0527493535000372E2 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		7CE303A3274C289C00F46867 /* CoinDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailView.swift; sourceTree = "<group>"; };
+		7CE303A5274C317200F46867 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +38,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CE303AB274C494500F46867 /* URLImageStore in Frameworks */,
+				7CE303A9274C494500F46867 /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				7C9399F0274786BD000372E2 /* ContentView.swift */,
+				7CE303A5274C317200F46867 /* MainView.swift */,
+				7CE303A3274C289C00F46867 /* CoinDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -124,6 +134,10 @@
 			dependencies = (
 			);
 			name = Cryptoken;
+			packageProductDependencies = (
+				7CE303A8274C494500F46867 /* URLImage */,
+				7CE303AA274C494500F46867 /* URLImageStore */,
+			);
 			productName = Cryptoken;
 			productReference = 7C9399EB274786BD000372E2 /* Cryptoken.app */;
 			productType = "com.apple.product-type.application";
@@ -152,6 +166,9 @@
 				Base,
 			);
 			mainGroup = 7C9399E2274786BD000372E2;
+			packageReferences = (
+				7CE303A7274C494500F46867 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 7C9399EC274786BD000372E2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -179,7 +196,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C939A02274787CE000372E2 /* CoinRepository.swift in Sources */,
+				7CE303A6274C317200F46867 /* MainView.swift in Sources */,
 				7C9399FE274786F7000372E2 /* Coin.swift in Sources */,
+				7CE303A4274C289C00F46867 /* CoinDetailView.swift in Sources */,
 				7C9399F1274786BD000372E2 /* ContentView.swift in Sources */,
 				7C9399EF274786BD000372E2 /* CryptokenApp.swift in Sources */,
 				7C939A0627493535000372E2 /* Environment.swift in Sources */,
@@ -383,6 +402,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7CE303A7274C494500F46867 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7CE303A8274C494500F46867 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7CE303A7274C494500F46867 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+		7CE303AA274C494500F46867 /* URLImageStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7CE303A7274C494500F46867 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImageStore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7C9399E3274786BD000372E2 /* Project object */;
 }

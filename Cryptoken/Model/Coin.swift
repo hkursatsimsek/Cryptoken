@@ -26,6 +26,7 @@ struct Coin:Codable {
     var uuid : String?
     var symbol : String?
     var name : String?
+    var price : String?
     var color : String?
     var iconUrl : String?
 }

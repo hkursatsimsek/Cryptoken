@@ -9,25 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var coinRepository = CoinRepository()
-    @State var coins = [Coin]()
+
     
     var body: some View {
-        VStack{
-            List(coins,id: \.uuid) { item in
-                Text(item.name ?? "Noname")
-            }.navigationTitle("Coins")
-                .onAppear(){
-                    coinRepository.getAllCoins { result in
-                        if let coinData = result.data {
-                            if let myCoins = coinData.coins {
-                                coins = myCoins
-                            }
-                        }
-                        
-                    }
-                }
-        }
+       MainView()
     }
 }
 
